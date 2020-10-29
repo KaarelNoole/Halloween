@@ -1,0 +1,88 @@
+:root{
+    --main-padding: 5px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 0.5fr 3fr 2fr 2fr 1fr;
+    grid-template-areas: 
+    "nav main main main"
+    "Hero Hero Hero Hero"
+    "Main Main content1 Image"
+    "Main Main content1 Extra"
+    "footer footer footer footer";
+    gap: 5px;
+}
+
+nav{
+    background: cadetblue;
+    padding: var(--main-padding);
+    grid-area: nav;
+}
+
+main{
+    background: darkcyan;
+    padding: var(--main-padding);
+    grid-area: main;
+}
+
+#Hero{
+    background: rgba(88, 151, 79);
+    padding: var(--main-padding);
+    grid-area: Hero;
+}
+
+#Main{
+    background:orange;
+    padding: var(--main-padding);
+    grid-area: Main;
+}
+
+#Image{
+    background: black;
+    padding: var(--main-padding);
+    grid-area: Image;
+}
+
+#Extra{
+    background: rgb(54, 142, 168);
+    padding: var(--main-padding);
+    grid-area: Extra;
+}
+
+footer{
+    background: rgb(179, 43, 43);
+    padding: var(--main-padding);
+    grid-area: footer;
+}
+
+#content1{
+    padding: var(--main-padding);
+    grid-area: content1;
+}
+
+@media (max-width:768px){
+    .container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: 
+        "nav nav nav"
+        "Hero Hero Hero"
+        "Menu Main Main"
+        "Menu Footer Footer"
+        "Menu Extra Image"
+    }
+
+    
+}
